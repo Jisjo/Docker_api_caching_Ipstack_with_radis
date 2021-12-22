@@ -43,3 +43,12 @@ CONTAINER ID   IMAGE                    COMMAND                  CREATED        
 
 
 ![screenshot-result](https://github.com/Jisjo/Docker_api_caching_Ipstack_with_radis/blob/main/Screenshot.png)
+
+```
+$ docker-compose down -v
+Stopping ipstackapp   ... done
+Stopping radis-server ... done
+Removing ipstackapp   ... done
+Removing radis-server ... done
+Removing network day-10_api-net
+```
