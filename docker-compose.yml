@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  caching_server:
+    image: redis:alpine
+    container_name: radis-server
+    networks: 
+      - api-net
+    restart: always
+
+  api_calling_server:
+    image: fujikomalan/ipstack:v1
+    container_name: ipstackapp
+    environment:
+      - CACHING_SERVER=radis-server
+      - IPSTACK_KEY=58a5fdf35e36add5ebc54201ca913cea
+    ports:
+      - 80:8080
+    networks:
+      - api-net
+
+networks:
+  api-net:
+
